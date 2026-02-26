@@ -3,6 +3,8 @@ public class SentenceSort{
   public static void main(String[] args)
 {
   String ip="Givi3ng I1 a2m 5Test Deloi4tte";
+    System.out.println("Input String Before Filter:"+ip);
+
   System.out.printl(arrangesent(ip));
 }
   public static String arrangesent(String a)
@@ -23,8 +25,8 @@ public class SentenceSort{
               newword.append(ch);
             }
           }
-        return[position -1]= newword.toString();
+        op[position -1]= newword.toString();
       }
-    return String.join(" ", result);
+    return String.join(" ", op);
   }
 }
