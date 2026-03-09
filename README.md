@@ -54,6 +54,33 @@ result[position - 1] = cleanedWord;
 We subtract 1 because array indexing starts from 0.
 
 Step 5: Convert the array back to a sentence
+Join all words with a space
 
-Join all words with a space:
+
+**Question2:Minimum Bottle using(Knapsack)-**
+Problem
+Water bottles of certain capacities are available: 2L, 3L, 5L, 7L, and 11L. 
+For a given target volume in litres, the problem is to find the least number of bottles required to exactly reach the target volume. 
+If the target volume cannot be exactly reached with the given bottles, return -1. 
+This is the classic "Coin Change Problem," with the coins being the available water bottles and the target being the target volume. 
+
+Example
+Target: 10 L 
+Possible combinations: 
+5+5 = 10 L, requiring 2 bottles 
+Another combination: 
+3+7 = 10 L, requiring 2 bottles 
+Another combination: 
+2+3+5 = 10 L, requiring 3 bottles 
+This is not the least number of bottles required. 
+The program correctly gives the result: 2. 
+
+Method: Dynamic Programming (Bottom-Up Approach)
+The solution is based on the "Bottom-Up Approach" of Dynamic Programming. 
+Key Idea:
+dp[i] is defined as the least number of bottles required exactly to reach the target volume of i litres. 
+
+dp[0] is initialized with 0, as zero bottles are required for zero litres. 
+For all other dp[i], the value is initialized with Integer.MAX_VALUE, signifying "not yet reachable." 
+For all i from 1 to target, the program goes through all the available bottles
 
