@@ -77,12 +77,14 @@ Another combination:
 This is not the least number of bottles required. 
 The program correctly gives the result: 2. 
 
-\n
+
+
 Method: Dynamic Programming (Bottom-Up Approach)
 The solution is based on the "Bottom-Up Approach" of Dynamic Programming. 
 Key Idea:
 dp[i] is defined as the least number of bottles required exactly to reach the target volume of i litres. 
-\n
+
+
 dp[0] is initialized with 0, as zero bottles are required for zero litres. 
 For all other dp[i], the value is initialized with Integer.MAX_VALUE, signifying "not yet reachable." 
 For all i from 1 to target, the program goes through all the available bottles
