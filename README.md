@@ -91,8 +91,69 @@ For all i from 1 to target, the program goes through all the available bottles.
 
 
 **Question no.3: Supper Tunnel**
+
 I don't clearly remember this problem, but it's a clear graph one.
+
 I tried the solution based on what I remember taking help with AI assistants.
+
 Below is the details of the PS:
+
+Gemini said
+Since this is for a GitHub post, you’ll want a clean, professional README.md that explains the logic clearly to other developers. I’ve structured this to focus on the Algorithm and the Implementation, which are the most important parts for a repository.
+
+Super Tunnel Discovery: Finding Critical Infrastructure
+📌 Overview
+In a network of connected tunnels, some junctions are more critical than others. A Super Tunnel is a single point of failure: if this tunnel collapses, it disconnects parts of the network that were previously reachable.
+
+This project implements an efficient solution using Graph Theory to identify these critical nodes (Articulation Points) in O(V 
+2
+ ) time for an adjacency matrix.
+
+🚀 The Problem
+Given an N×N adjacency matrix where:
+
+1 represents a connection between two tunnels.
+
+0 represents no connection.
+
+Find all indices of "Super Tunnels" that, if removed, increase the number of connected components in the graph.
+
+Why not just remove each node and check?
+A naive approach would be to remove each tunnel one by one and run a BFS/DFS to see if the graph is still connected. This would take O(V⋅(V+E)), which is too slow for large networks. Instead, we use Tarjan’s Algorithm, which finds all Super Tunnels in a single DFS pass.
+
+🛠️ Implementation Details (Java)
+The core logic uses two auxiliary arrays:
+
+Discovery Time (disc[]): The order in which a node was reached.
+
+Low Link Value (low[]): The lowest discovery time reachable from the node (including its descendants) using a back-edge.
+
+Logic Criteria
+A node u is a Super Tunnel if:
+
+Root Case: It is the starting node of the DFS and has more than one child.
+
+Intermediate Case: It has a child v such that no back-edge exists from v or its descendants to u or any ancestor of u (low[v]≥disc[u]).
+
+📋 Example
+Input Matrix:
+
+Plaintext
+0 1 1 0 0
+1 0 1 0 0
+1 1 0 1 0
+0 0 1 0 1
+0 0 0 1 0
+Visual Representation:
+
+Tunnels 0, 1, and 2 form a triangle.
+
+Tunnel 2 connects to Tunnel 3.
+
+Tunnel 3 connects to Tunnel 4.
+
+Output:
+[2, 3]
+(If 2 is removed, {0,1} are cut off. If 3 is removed, {4} is cut off.)
 
 
