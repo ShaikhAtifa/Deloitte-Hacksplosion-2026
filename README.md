@@ -87,5 +87,12 @@ dp[i] is defined as the least number of bottles required exactly to reach the ta
 
 dp[0] is initialized with 0, as zero bottles are required for zero litres. 
 For all other dp[i], the value is initialized with Integer.MAX_VALUE, signifying "not yet reachable." 
-For all i from 1 to target, the program goes through all the available bottles
+For all i from 1 to target, the program goes through all the available bottles.
+
+
+**Question no.3: Supper Tunnel**
+I don't clearly remember this problem, but it's a clear graph one.
+I tried the solution based on what I remember taking help with AI assistants.
+Below is the details of the PS:
+
 
